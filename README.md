@@ -25,7 +25,7 @@
 ```bash
 
 # clone this repo
-git clone https://github.com/retaildevcrews/auto-gitops-quick-start agoqs
+git clone https://github.com/bartr/auto-gitops-quick-start agoqs
 
 # start in the root of the repo
 cd agoqs
@@ -75,12 +75,12 @@ git status
 ```bash
 
 # change the user, repo and PAT parameters
-ago --github-user bartr --github-repo /retaildevcrews/gitops --github-pat yourPAT
+ago --github-user bartr --github-repo /bartr/gitops --github-pat yourPAT
 
 # you can set env vars and don't have to pass the values each time
 # On Windows, use set
 export GITHUB_USER bartr
-export GITHUB_REPO /retaildevcrews/gitops
+export GITHUB_REPO /bartr/gitops
 export GITHUB_PAT yourPAT
 
 ```
@@ -93,7 +93,7 @@ export GITHUB_PAT yourPAT
 
 ```bash
 
-docker pull ghcr.io/retaildevcrews/autogitops:beta
+docker pull ghcr.io/bartr/autogitops:beta
 
 ```
 
@@ -110,7 +110,7 @@ docker rm autogitops
 docker run -it --name autogitops \
 -v $PWD/autogitops:/template \
 -v $PWD/deploy:/deploy \
-ghcr.io/retaildevcrews/autogitops:beta \
+ghcr.io/bartr/autogitops:beta \
 --local-dev
 
 ```
@@ -130,7 +130,7 @@ docker rm autogitops
 docker run -it --name autogitops \
 -v $PWD/autogitops:/template \
 -v $PWD/deploy:/deploy \
-ghcr.io/retaildevcrews/autogitops:beta \
+ghcr.io/bartr/autogitops:beta \
 --github-repo /retaildevcrews/gitops \
 --github-user yourGitHubName \
 --github-pat yourGitHubPAT
