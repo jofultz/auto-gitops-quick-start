@@ -1,0 +1,9 @@
+{
+    "name": "tinybench",
+    "namespace": "ngsa",
+    "imageName": "ghcr.io/retaildevcrews/tinybench",
+    "imageTag": "beta",
+    "targets": [ "azure", "do", "gcp" ]
+
+    // possible targets [ "azure", "do", "gcp" ]
+}
