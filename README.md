@@ -75,13 +75,13 @@ git status
 ```bash
 
 # change the user, repo and PAT parameters
-ago --github-user bartr --github-repo /bartr/gitops --github-pat yourPAT
+ago --ago-user bartr --ago-repo /bartr/gitops --ago-pat yourPAT
 
 # you can set env vars and don't have to pass the values each time
 # On Windows, use set
-export GITHUB_USER bartr
-export GITHUB_REPO /bartr/gitops
-export GITHUB_PAT yourPAT
+export AGO_USER bartr
+export AGO_REPO /bartr/gitops
+export AGO_PAT yourPAT
 
 ```
 
@@ -100,7 +100,7 @@ docker pull ghcr.io/bartr/autogitops:beta
 ### Run `AutoGitOps` on local data (Docker)
 
 - Mount your local template directory using `-v`
-  - example: `-v $PWD/autogitops:/template`
+  - example: `-v $PWD/autogitops:/autogitops`
 
 ```bash
 
@@ -108,7 +108,7 @@ docker pull ghcr.io/bartr/autogitops:beta
 docker rm autogitops
 
 docker run -it --name autogitops \
--v $PWD/autogitops:/template \
+-v $PWD/autogitops:/autogitops \
 -v $PWD/deploy:/deploy \
 ghcr.io/bartr/autogitops:beta \
 --local-dev
@@ -118,9 +118,7 @@ ghcr.io/bartr/autogitops:beta \
 ### Run `AutoGitOps` on a GitHub Repo (Docker)
 
 - Mount your template directory using `-v`
-  - example: `-v $PWD/autogitops:/template`
-- Mount your local deploy directory using `-v`
-  - example: `-v $PWD/deploy:/deploy`
+  - example: `-v $PWD/autogitops:/autogitops`
 
 ```bash
 
@@ -128,11 +126,10 @@ ghcr.io/bartr/autogitops:beta \
 docker rm autogitops
 
 docker run -it --name autogitops \
--v $PWD/autogitops:/template \
--v $PWD/deploy:/deploy \
+-v $PWD/autogitops:/autogitops \
 ghcr.io/bartr/autogitops:beta \
---github-repo /retaildevcrews/gitops \
---github-user yourGitHubName \
---github-pat yourGitHubPAT
+--ago-repo /retaildevcrews/gitops \
+--ago-user yourGitHubName \
+--ago-pat yourGitHubPAT
 
 ```
