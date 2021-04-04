@@ -93,7 +93,7 @@ export AGO_PAT yourPAT
 
 ```bash
 
-docker pull ghcr.io/bartr/autogitops:beta
+docker pull ghcr.io/bartr/autogitops
 
 ```
 
@@ -110,7 +110,7 @@ docker rm autogitops
 docker run -it --name autogitops \
 -v $PWD/autogitops:/autogitops \
 -v $PWD/deploy:/deploy \
-ghcr.io/bartr/autogitops:beta \
+ghcr.io/bartr/autogitops \
 --local-dev
 
 ```
@@ -127,7 +127,7 @@ docker rm autogitops
 
 docker run -it --name autogitops \
 -v $PWD/autogitops:/autogitops \
-ghcr.io/bartr/autogitops:beta \
+ghcr.io/bartr/autogitops \
 --ago-repo /retaildevcrews/gitops \
 --ago-user yourGitHubName \
 --ago-pat yourGitHubPAT
