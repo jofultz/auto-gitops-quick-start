@@ -3,7 +3,7 @@
     "namespace": "ngsa",
     "imageName": "ghcr.io/retaildevcrews/tinybench",
     "imageTag": "beta",
-    "targets": [ "azure", "do", "gcp" ]
+    "targets": [ "central", "east", "west" ]
 
-    // possible targets [ "azure", "do", "gcp" ]
+    // possible targets [ "central", "east", "west" ]
 }
