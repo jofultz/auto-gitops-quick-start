@@ -1,6 +1,6 @@
 # Auto GitOps Quick Start
 
-`AutoGitOps` is a dotnet tool that provides a basic templating engine for use with [Flux](https://fluxcd.io/). This quick start walks through using `AutoGitOps`.
+`AutoGitOps` is a tool that provides a basic templating engine for use with [Flux](https://fluxcd.io/). This quick start walks through using `AutoGitOps`.
 
 ## Key Concepts
 
