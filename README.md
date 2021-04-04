@@ -51,8 +51,8 @@ cd auto-gitops-quick-start
 # uninstall (if necessary)
 dotnet tool uninstall -g autogitops
 
-# install latest beta version from this repo
-dotnet tool install -g --add-source nupkg --version 0.0.2-beta-5 autogitops
+# install latest version from nuget
+dotnet tool install -g autogitops
 
 ```
 
