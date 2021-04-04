@@ -58,8 +58,8 @@ dotnet tool install -g autogitops
 
 ### Run `AutoGitOps` on local data (dotnet tool)
 
-- This will create an `ngsa` directory in each of the targets - central, east and west
-  - The `ngsa` directory will contain
+- This will create an `tiny` directory in each of the targets - central, east and west
+  - The `tiny` directory will contain
     - namespace.yaml
     - tinybench.yaml
   - You can use `kubectl apply -f` to test the generated files
