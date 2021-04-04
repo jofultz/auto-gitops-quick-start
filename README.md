@@ -10,7 +10,7 @@
   - This separation empowers application teams while providing centralized cluster management
 - Each `Kubernetes Cluster` (target) has a directory in the `deploy` folder
   - In a real environment, this would be your centralized Flux repository maintained by the `platform team`
-  - A sample repository is [here](https://github.com/bartr/gitops)
+  - A sample repository is [here](https://github.com/cloudatx/gitops)
     - There are 3 targets defined - central, east and west
     - Each target contains a `config.json` file which allows you to define simple values that are applied to the `application templates`. In our example, we define `zone`, `region` and `template`
     - The `template` value defines which `application template` to use for publishing
@@ -35,7 +35,7 @@
 ```bash
 
 # clone this repo
-git clone https://github.com/bartr/auto-gitops-quick-start
+git clone https://github.com/cloudatx/auto-gitops-quick-start
 
 # start in the root of the repo
 cd auto-gitops-quick-start
@@ -98,11 +98,11 @@ git status
 ```bash
 
 # change the user, repo and PAT parameters
-ago --ago-user bartr --ago-repo /bartr/gitops --ago-pat yourPAT
+ago --ago-user yourName --ago-repo /cloudatx/gitops --ago-pat yourPAT
 
 # you can set env vars and don't have to pass the values each time
-export AGO_USER bartr
-export AGO_REPO /bartr/gitops
+export AGO_USER yourName
+export AGO_REPO /cloudatx/gitops
 export AGO_PAT yourPAT
 
 ```
@@ -111,7 +111,7 @@ export AGO_PAT yourPAT
 
 ```bash
 
-docker pull ghcr.io/bartr/autogitops
+docker pull ghcr.io/cloudatx/autogitops
 
 ```
 
@@ -130,7 +130,7 @@ docker run -it --rm \
 -v $PWD/autogitops:/app/autogitops \
 -v $PWD/deploy:/app/deploy \
 --entrypoint /bin/sh \
-ghcr.io/bartr/autogitops
+ghcr.io/cloudatx/autogitops
 
 # from the docker container
 ./ago --local-dev --dry-run
@@ -155,7 +155,7 @@ git status
 docker run -it --rm \
 -v $PWD/autogitops:/app/autogitops \
 -v $PWD/deploy:/app/deploy \
-ghcr.io/bartr/autogitops \
+ghcr.io/cloudatx/autogitops \
 --local-dev
 
 # see the updates
@@ -167,7 +167,7 @@ git status
 
 ### Run `AutoGitOps` on a GitHub Repo (Docker)
 
-> Since you don't have permission to push to `/bartr/gitops` you will get an error on `git push`
+> Since you don't have permission to push to `/cloudatx/gitops` you will get an error on `git push`
 
 - Mount your template directory using `-v`
   - example: `-v $PWD/autogitops:/app/autogitops`
@@ -176,7 +176,7 @@ git status
 
 docker run -it --rm \
 -v $PWD/autogitops:/app/autogitops \
-ghcr.io/bartr/autogitops \
+ghcr.io/cloudatx/autogitops \
 --ago-repo $AGO_REPO \
 --ago-pat $AGO_PAT \
 --ago-user $AGO_USER

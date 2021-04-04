@@ -1,7 +1,7 @@
 {
     "name": "tinybench",
     "namespace": "ngsa",
-    "imageName": "ghcr.io/retaildevcrews/tinybench",
+    "imageName": "ghcr.io/cloudatx/tinybench",
     "imageTag": "beta",
     "targets": [ "central", "east", "west" ]
 
